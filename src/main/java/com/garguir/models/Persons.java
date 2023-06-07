@@ -78,7 +78,7 @@ public class Persons {
         return null;
     }
 
-    public boolean findPersonWithLambdaAnyMatch(Person person) {
+    public boolean findPersonWithStreamAnyMatch(Person person) {
         return this.persons.stream()
                 .anyMatch(p -> p.getName().equals(person.getName()) && p.getLastName().equals(person.getLastName()));
     }

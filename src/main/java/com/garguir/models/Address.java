@@ -46,10 +46,10 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
+        return "Address { " +
                 "streetName='" + streetName + '\'' +
                 ", streetNumber='" + streetNumber + '\'' +
                 ", cityName='" + cityName + '\'' +
-                '}';
+                " } ";
     }
 }

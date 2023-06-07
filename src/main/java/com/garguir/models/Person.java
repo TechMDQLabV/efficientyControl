@@ -90,13 +90,13 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person { " +
                 "dni=" + dni +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address=" + address +
                 ", birthDate='" + birthDate + '\'' +
-                '}';
+                " } ";
     }
 
 }
