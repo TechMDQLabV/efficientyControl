@@ -83,7 +83,7 @@ public class Persons {
                 .anyMatch(p -> p.getName().equals(person.getName()) && p.getLastName().equals(person.getLastName()));
     }
 
-    public Person findPersonWithLambda(Person person) {
+    public Person findPersonWithStream(Person person) {
         return this.persons.stream()
                 .filter(p -> p.getName().equals(person.getName()) && p.getLastName().equals(person.getLastName()))
                 .findFirst()

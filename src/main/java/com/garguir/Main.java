@@ -25,7 +25,7 @@ public class Main {
             Persons personsFor = new Persons(QUANTITY);
             Persons personsEnhancedFor = new Persons(QUANTITY);
             Persons personsLamdaAnyMatch = new Persons(QUANTITY);
-            Persons personsLamda = new Persons(QUANTITY);
+            Persons personsStream = new Persons(QUANTITY);
 
             System.out.println(SIMPLE_LINE);
             System.out.println(SIMPLE_LINE);
@@ -75,7 +75,7 @@ public class Main {
             }
             System.out.println(System.currentTimeMillis() - startTimeHS + "ms");
             System.out.println("Persona buscada en posición: " + randomNumber);
-            System.out.println(person);
+            System.out.println(personToSearch);
             System.out.println("Persona encontrada: ");
             System.out.println(personFor);
             System.out.println(DOUBLE_LINE);
@@ -97,7 +97,7 @@ public class Main {
             }
             System.out.println(System.currentTimeMillis() - startTimeHSEnhancedFor + "ms");
             System.out.println("Persona buscada en posición: " + randomNumber);
-            System.out.println(person);
+            System.out.println(personToSearch);
             System.out.println("Persona encontrada: ");
             System.out.println(personEnhancedFor);
             System.out.println(DOUBLE_LINE);
@@ -119,27 +119,27 @@ public class Main {
             }
             System.out.println(System.currentTimeMillis() - startTimeHSLamdaAnyMatch + "ms");
             System.out.println("Persona buscada en posición: " + randomNumber);
-            System.out.println(person);
+            System.out.println(personToSearch);
             System.out.println("Persona encontrada?: "+foundIt);
             System.out.println(DOUBLE_LINE);
 
             // Run find method with lamda
 
-            //person = personsLamda.getLastPerson();
-            person = personsLamda.getPerson(randomNumber);
+            //person = personsStream.getLastPerson();
+            person = personsStream.getPerson(randomNumber);
             personToSearch.setLastName(person.getLastName());
             personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
-            long startTimeHSLamda = System.currentTimeMillis();
-            Person personStream = personsLamda.findPersonWithLambda(personToSearch);
+            long startTimeHSStream = System.currentTimeMillis();
+            Person personStream = personsStream.findPersonWithStream(personToSearch);
             if (personStream!=null) {
                 System.out.print("Find with lamda in ");
             } else {
                 System.out.print("Not found with lamda in ");
             }
-            System.out.println(System.currentTimeMillis() - startTimeHSLamda + "ms");
+            System.out.println(System.currentTimeMillis() - startTimeHSStream + "ms");
             System.out.println("Persona buscada en posición: " + randomNumber);
-            System.out.println(person);
+            System.out.println(personToSearch);
             System.out.println("Persona encontrada: ");
             System.out.println(personStream);
             System.out.println(DOUBLE_LINE);
