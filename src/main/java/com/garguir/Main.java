@@ -19,6 +19,7 @@ public class Main {
         LOGGER.info("Efficiency Control");
 
         Person person;
+        Person personToSearch = new Person();
         for (int i = 0; i < 3; i++){
             Persons personsWhile = new Persons(QUANTITY);
             Persons personsFor = new Persons(QUANTITY);
@@ -40,9 +41,11 @@ public class Main {
 
             //person = personsWhile.getLastPerson();
             person = personsWhile.getPerson(randomNumber);
+            personToSearch.setLastName(person.getLastName());
+            personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
             long startTimeHSWhile = System.currentTimeMillis();
-            Person personWhile = personsWhile.findPersonWhile(person);
+            Person personWhile = personsWhile.findPersonWhile(personToSearch);
             if (personWhile!=null) {
                 System.out.print("Find with While in ");
             } else {
@@ -50,7 +53,7 @@ public class Main {
             }
             System.out.println(System.currentTimeMillis() - startTimeHSWhile + "ms");
             System.out.println("Persona buscada en posición: " + randomNumber);
-            System.out.println(person);
+            System.out.println(personToSearch);
             System.out.println("Persona encontrada: ");
             System.out.println(personWhile);
             System.out.println(DOUBLE_LINE);
@@ -60,9 +63,11 @@ public class Main {
 
             //person = personsFor.getLastPerson();
             person = personsFor.getPerson(randomNumber);
+            personToSearch.setLastName(person.getLastName());
+            personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
             long startTimeHS = System.currentTimeMillis();
-            Person personFor = personsFor.findPersonFor(person);
+            Person personFor = personsFor.findPersonFor(personToSearch);
             if (personFor!=null) {
                 System.out.print("Find with For in ");
             } else {
@@ -80,9 +85,11 @@ public class Main {
 
             //person = personsEnhancedFor.getLastPerson();
             person = personsEnhancedFor.getPerson(randomNumber);
+            personToSearch.setLastName(person.getLastName());
+            personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
             long startTimeHSEnhancedFor = System.currentTimeMillis();
-            Person personEnhancedFor = personsEnhancedFor.findPersonEnhancedFor(person);
+            Person personEnhancedFor = personsEnhancedFor.findPersonEnhancedFor(personToSearch);
             if (personEnhancedFor!=null) {
                 System.out.print("Find with Enhanced For in ");
             } else {
@@ -100,9 +107,11 @@ public class Main {
 
             //person = personsLamdaAnyMatch.getLastPerson();
             person = personsLamdaAnyMatch.getPerson(randomNumber);
+            personToSearch.setLastName(person.getLastName());
+            personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
             long startTimeHSLamdaAnyMatch = System.currentTimeMillis();
-            boolean foundIt = personsLamdaAnyMatch.findPersonWithLambdaAnyMatch(person);
+            boolean foundIt = personsLamdaAnyMatch.findPersonWithLambdaAnyMatch(personToSearch);
             if (foundIt) {
                 System.out.print("Find with lamdaAnyMatch in ");
             } else {
@@ -118,9 +127,11 @@ public class Main {
 
             //person = personsLamda.getLastPerson();
             person = personsLamda.getPerson(randomNumber);
+            personToSearch.setLastName(person.getLastName());
+            personToSearch.setName((i==2)?person.getName()+1:person.getName());
             System.out.println("Searching: " + person);
             long startTimeHSLamda = System.currentTimeMillis();
-            Person personStream = personsLamda.findPersonWithLambda(person);
+            Person personStream = personsLamda.findPersonWithLambda(personToSearch);
             if (personStream!=null) {
                 System.out.print("Find with lamda in ");
             } else {
