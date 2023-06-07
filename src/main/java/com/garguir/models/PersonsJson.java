@@ -10,10 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PersonsJson {
-    private static String PATH_RESOURCES = System.getProperty("user.dir")+"/src/main/resources";
-    private static String PATH_PERSONS = "/persons.json";
+    private static final String PATH_RESOURCES = System.getProperty("user.dir")+"/src/main/resources";
+    private static final String PATH_PERSONS = "/persons.json";
 
-    private List<Person> personList = new ArrayList<>();
+    private final List<Person> personList = new ArrayList<>();
 
     public PersonsJson(){
         JSONParser parser = new JSONParser();

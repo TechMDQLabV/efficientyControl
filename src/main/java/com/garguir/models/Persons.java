@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Persons {
 
-    private static PersonsJson personsJson = new PersonsJson();
+    private static final PersonsJson personsJson = new PersonsJson();
 
-    private List<Person> persons = new ArrayList<>();
+    private final List<Person> persons = new ArrayList<>();
 
     public Persons() {
 

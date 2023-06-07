@@ -7,12 +7,12 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private static Logger LOGGER = Logger.getLogger("Efficiency Control");
-    public static int QUANTITY = 19000000;
+    private static final Logger LOGGER = Logger.getLogger("Efficiency Control");
+    public static final int QUANTITY = 19000000;
 
-    public static String DOUBLE_LINE = "========================================================================================================================================================================";
+    public static final String DOUBLE_LINE = "========================================================================================================================================================================";
 
-    public static String SIMPLE_LINE = "------------------------------------------------------------------------------------";
+    public static final String SIMPLE_LINE = "------------------------------------------------------------------------------------";
 
 
     public static void main(String[] args) {
@@ -20,6 +20,12 @@ public class Main {
 
         Person person;
         for (int i = 0; i < 3; i++){
+            Persons personsWhile = new Persons(QUANTITY);
+            Persons personsFor = new Persons(QUANTITY);
+            Persons personsEnhancedFor = new Persons(QUANTITY);
+            Persons personsLamdaAnyMatch = new Persons(QUANTITY);
+            Persons personsLamda = new Persons(QUANTITY);
+
             System.out.println(SIMPLE_LINE);
             System.out.println(SIMPLE_LINE);
             System.out.println("Iteration " + (i + 1));
@@ -31,7 +37,7 @@ public class Main {
             //int randomNumber = QUANTITY-1;
 
             // Run find method with While
-            Persons personsWhile = new Persons(QUANTITY);
+
             //person = personsWhile.getLastPerson();
             person = personsWhile.getPerson(randomNumber);
             System.out.println("Searching: " + person);
@@ -51,7 +57,7 @@ public class Main {
 
 
             // Run find method with for
-            Persons personsFor = new Persons(QUANTITY);
+
             //person = personsFor.getLastPerson();
             person = personsFor.getPerson(randomNumber);
             System.out.println("Searching: " + person);
@@ -71,7 +77,7 @@ public class Main {
 
 
             // Run find method with enhanced for
-            Persons personsEnhancedFor = new Persons(QUANTITY);
+
             //person = personsEnhancedFor.getLastPerson();
             person = personsEnhancedFor.getPerson(randomNumber);
             System.out.println("Searching: " + person);
@@ -91,7 +97,7 @@ public class Main {
 
 
             // Run find method with lamda anyMatch
-            Persons personsLamdaAnyMatch = new Persons(QUANTITY);
+
             //person = personsLamdaAnyMatch.getLastPerson();
             person = personsLamdaAnyMatch.getPerson(randomNumber);
             System.out.println("Searching: " + person);
@@ -109,7 +115,7 @@ public class Main {
             System.out.println(DOUBLE_LINE);
 
             // Run find method with lamda
-            Persons personsLamda = new Persons(QUANTITY);
+
             //person = personsLamda.getLastPerson();
             person = personsLamda.getPerson(randomNumber);
             System.out.println("Searching: " + person);

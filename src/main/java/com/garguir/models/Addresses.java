@@ -10,10 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Addresses {
-    private static String PATH_RESOURCES = System.getProperty("user.dir")+"/src/main/resources";
-    private static String PATH_ADDRESSES = "/addresses.json";
+    private static final String PATH_RESOURCES = System.getProperty("user.dir")+"/src/main/resources";
+    private static final String PATH_ADDRESSES = "/addresses.json";
 
-    private List<Address> addresses = new ArrayList<>();
+    private final List<Address> addresses = new ArrayList<>();
 
     public Addresses(){
         JSONParser parser = new JSONParser();
