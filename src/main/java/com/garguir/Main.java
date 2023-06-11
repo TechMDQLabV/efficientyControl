@@ -3,6 +3,8 @@ package com.garguir;
 import com.garguir.models.Person;
 import com.garguir.models.Persons;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class Main {
@@ -22,7 +24,11 @@ public class Main {
         long startTime;
         Person person;
         Person personToSearch = new Person();
-
+        List<String> streets = new ArrayList<>(10);
+        Persons testStreets = new Persons(200);
+        streets = testStreets.findStreets('1');
+        streets.forEach(System.out::println);
+        /*
         for (int i = 0; i < X; i++){
             Persons personsWhile = new Persons(QUANTITY);
             Persons personsFor = new Persons(QUANTITY);
@@ -147,5 +153,6 @@ public class Main {
             System.out.println(personStream);
             System.out.println(DOUBLE_LINE);
         }
+         */
     }
 }

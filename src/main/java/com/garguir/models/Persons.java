@@ -89,4 +89,21 @@ public class Persons {
                 .findFirst()
                 .orElse(null);
     }
+
+    public String findStreet(char c){
+        return this.persons.stream()
+                .map(Person::getAddress)
+                .map(Address::getStreetName)
+                .filter(street -> street.charAt(0) == c)
+                .findFirst()
+                .orElse("");
+    }
+
+    public List<String> findStreets(char c){
+        return this.persons.stream()
+                .map(Person::getAddress)
+                .map(Address::getStreetName)
+                .filter(street -> street.charAt(0) == c)
+                .toList();
+    }
 }
