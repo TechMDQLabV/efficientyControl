@@ -1,6 +1,7 @@
 package com.garguir;
 
 import com.garguir.models.Person;
+import com.garguir.models.PersonList;
 import com.garguir.models.Persons;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
 public class Main {
 
     private static final Logger LOGGER = Logger.getLogger("Efficiency Control");
-    public static final int QUANTITY = 19000000;
+    public static final int QUANTITY = 50000000;
     public static final int X = 3;
 
     public static final String DOUBLE_LINE = "========================================================================================================================================================================";
@@ -28,13 +29,23 @@ public class Main {
         Persons testStreets = new Persons(200);
         streets = testStreets.findStreets('1');
         streets.forEach(System.out::println);
-        /*
+
         for (int i = 0; i < X; i++){
+            startTime = System.currentTimeMillis();
             Persons personsWhile = new Persons(QUANTITY);
-            Persons personsFor = new Persons(QUANTITY);
+            System.out.println("..................... Array dinamico de 1 en 1: " + (System.currentTimeMillis() - startTime) + "ms");
+            startTime = System.currentTimeMillis();
+            PersonList personsFor = new PersonList();
+            System.out.println("..................... Array dinamico completo.: " + (System.currentTimeMillis() - startTime) + "ms");
+            startTime = System.currentTimeMillis();
             Persons personsEnhancedFor = new Persons(QUANTITY);
-            Persons personsStreamAnyMatch = new Persons(QUANTITY);
+            System.out.println("..................... Array dinamico de 1 en 1: " + (System.currentTimeMillis() - startTime) + "ms");
+            startTime = System.currentTimeMillis();
+            PersonList personsStreamAnyMatch = new PersonList(QUANTITY);
+            System.out.println("..................... Array dinamico completo.: " + (System.currentTimeMillis() - startTime) + "ms");
+            startTime = System.currentTimeMillis();
             Persons personsStream = new Persons(QUANTITY);
+            System.out.println("..................... Array dinamico de 1 en 1: " + (System.currentTimeMillis() - startTime) + "ms");
 
             System.out.println(SIMPLE_LINE);
             System.out.println(SIMPLE_LINE);
@@ -43,8 +54,8 @@ public class Main {
             System.out.println(SIMPLE_LINE);
 
             // select a random number for concat with name to search
-            randomNumber = (int)(Math. random()*QUANTITY+1);
-            //randomNumber = QUANTITY-1;
+            //randomNumber = (int)(Math. random()*QUANTITY+1);
+            randomNumber = QUANTITY-1;
 
             // Run find method with While
 
@@ -153,6 +164,6 @@ public class Main {
             System.out.println(personStream);
             System.out.println(DOUBLE_LINE);
         }
-         */
+
     }
 }
