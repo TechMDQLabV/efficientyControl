@@ -5,20 +5,21 @@ import java.util.List;
 
 public class Persons {
 
+    private static final int QUANTITY = 50000000;
     private static final PersonsJson personsJson = new PersonsJson();
 
-    private final List<Person> persons = new ArrayList<>();
-    private final List<Person> personList = new ArrayList<>(19000001);
+    private List<Person> persons;
 
     public Persons(){
-        for(int i=0;i<19000000;i++){
-            this.personList.add(personsJson.getRandomPerson());
+        this.persons = new ArrayList<>(QUANTITY);
+        for(int i=0;i<QUANTITY;i++){
+            this.persons.add(personsJson.getRandomPerson());
         }
     }
     public Persons(int quantity){
+        this.persons = new ArrayList<>();
         for(int i=0;i<quantity;i++){
             this.persons.add(personsJson.getRandomPerson());
-            //System.out.println(this.persons.get(i));
         }
     }
 

@@ -35,13 +35,13 @@ public class Main {
             Persons personsWhile = new Persons(QUANTITY);
             System.out.println("..................... Array dinamico de 1 en 1: " + (System.currentTimeMillis() - startTime) + "ms");
             startTime = System.currentTimeMillis();
-            PersonList personsFor = new PersonList();
+            Persons personsFor = new Persons();
             System.out.println("..................... Array dinamico completo.: " + (System.currentTimeMillis() - startTime) + "ms");
             startTime = System.currentTimeMillis();
             Persons personsEnhancedFor = new Persons(QUANTITY);
             System.out.println("..................... Array dinamico de 1 en 1: " + (System.currentTimeMillis() - startTime) + "ms");
             startTime = System.currentTimeMillis();
-            PersonList personsStreamAnyMatch = new PersonList(QUANTITY);
+            Persons personsStreamAnyMatch = new Persons(QUANTITY);
             System.out.println("..................... Array dinamico completo.: " + (System.currentTimeMillis() - startTime) + "ms");
             startTime = System.currentTimeMillis();
             Persons personsStream = new Persons(QUANTITY);
