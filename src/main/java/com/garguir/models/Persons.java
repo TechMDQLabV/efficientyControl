@@ -74,10 +74,10 @@ public class Persons {
     }
 
     public Person findPersonEnhancedFor(Person person) {
-        for (Person p : this.persons)
+        for (Person p : this.persons) {
             if (p.getName().equals(person.getName()) && p.getLastName().equals(person.getLastName()))
                 return p;
-
+        }
         return null;
     }
 
